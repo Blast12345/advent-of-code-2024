@@ -5,17 +5,15 @@ do {
     let input = try inputFile.read()
     
     let listParser = ListParser(input)
-    let leftLocationIds = try listParser.getLeftList()
-    let rightLocationIds = try listParser.getRightList()
+    let leftList = try listParser.getLeftList()
+    let rightList = try listParser.getRightList()
     
-    let sortedLeftLocationIds = leftLocationIds.sorted()
-    let sortedRightLocationIds = rightLocationIds.sorted()
+    let part1 = Part1()
+    let totalDistance = part1.calcuteTotalDistance(leftList, rightList)
     
-    let distancesCalculator = DistancesCalculator()
-    let distances = distancesCalculator.calculate(sortedLeftLocationIds, sortedRightLocationIds)
+    let part2 = Part2()
+    let similarityScore = part2.calculateSimilarityScore(leftList, rightList)
     
-    let sum = distances.sum()
-    print(sum)
 } catch {
     print(error)
 }
