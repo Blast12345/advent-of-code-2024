@@ -3,6 +3,7 @@ import Foundation
 struct Multiplier {
     let value1: Int
     let value2: Int
+    let enabled: Bool
 }
 
 extension Multiplier {
@@ -12,7 +13,7 @@ extension Multiplier {
         case invalidString2(String)
     }
     
-    init(string1: String, string2: String) throws {
+    init(string1: String, string2: String, enabled: Bool) throws {
         guard let value1 = Int(string1) else {
             throw Errors.invalidString1(string1)
         }
@@ -23,6 +24,7 @@ extension Multiplier {
         
         self.value1 = value1
         self.value2 = value2
+        self.enabled = enabled
     }
     
 }
