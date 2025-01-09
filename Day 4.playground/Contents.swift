@@ -5,7 +5,10 @@ do {
     let input = try inputFile.read()
     
     let part1 = Part1()
-    let occurrences = try part1.calculateOccurencesOfXmas(input)
+    let occurencesOfXmas = try part1.countOccurencesOfXmas(input)
+    
+    let part2 = Part2()
+    let occurencesOfXOfMas = try part2.countOccurencesOfXOfMas(input)
 } catch {
     print(error)
 }
